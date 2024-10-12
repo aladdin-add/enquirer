@@ -21,74 +21,17 @@ const colors = [
 
 module.exports = [
   {
-    type: 'autocomplete',
-    name: 'actor',
-    message: 'Pick your favorite actor',
-    initial: 1,
-    choices: [
-      { name: 'Adam Sandler' },
-      { name: 'Akshay Kumar' },
-      { name: 'Amy Adam' },
-      { name: 'Cate Blanchett' },
-      { name: 'Charlize Theron' },
-      { name: 'Chris Evans' },
-      { name: 'Chris Hemsworth' },
-      { name: 'Chris Pratt' },
-      { name: 'Dwayne "The Rock" Johnson' },
-      { name: 'Emma Stone' },
-      { name: 'Emma Watson' },
-      { name: 'Jackie Chan' },
-      { name: 'Jennifer Aniston' },
-      { name: 'Jennifer Lawrence' },
-      { name: 'Jeremy Renner' },
-      { name: 'Julia Roberts' },
-      { name: 'Mark Ruffalo' },
-      { name: 'Mark Wahlberg' },
-      { name: 'Matt Damon' },
-      { name: 'Melissa McCarthy' },
-      { name: 'Mila Kunis' },
-      { name: 'Robert Downey, Jr.' },
-      { name: 'Ryan Gosling' },
-      { name: 'Ryan Reynolds' },
-      { name: 'Salman Khan' },
-      { name: 'Samuel L. Jackson' },
-      { name: 'Shah Rukh Khan' },
-      { name: 'Tom Cruise' },
-      { name: 'Tom Hanks' },
-      { name: 'Vin Diesel' }
-    ],
-    suggest(input, choices) {
-      return choices.filter(choice => choice.message.toLowerCase().includes(input.toLowerCase()));
-    }
-  },
-  {
-    type: 'confirm',
-    name: 'confirmed',
-    message: 'Can you confirm?',
-    initial: true
-  },
-  {
-    type: 'text',
-    name: 'twitter',
-    message: 'What\'s your twitter handle?',
-    initial: 'Brian',
-    validate: () => true
-  },
-  {
-    type: 'invisible',
-    name: 'hidden',
-    message: 'What is your secret?'
-  },
-  {
-    type: 'list',
-    name: 'keywords',
-    message: 'Enter keywords'
-  },
-  {
     type: 'multiselect',
     name: 'multicolor',
     message: 'Pick colors',
     choices: colors.map(color => ({ ...color }))
+  },
+  {
+    type: 'multiselect',
+    name: 'multicolorx',
+    message: 'Pick colors',
+    choices: colors.map(color => ({ ...color })),
+    skip: () => true,
   },
   {
     type: 'numeral',
